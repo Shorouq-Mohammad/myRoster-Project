@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <input type="text" name="team" placeholder="write the team name" id="team">
+            <button onclick="getRoster()">GET ROSTER</button>
+            <button onclick="dreamTeam()">DreamTeam</button>
+        </div>
+        <div id="players"></div>
+    </div>
+
+    <script id="players-template" type="text/x-handlebars-template">
+        {{#each players}}
+        <div class="player">
+            <div class="name">{{this.firstName}} {{this.lastName}}</div>
+            <div>{{this.jersey}}</div>
+            <div class="imgDiv">
+                <div class="stats"></div>
+                <img src="https://nba-players.herokuapp.com/players/{{this.lastName}}/{{this.firstName}}" alt="playerImage" class="image">
+            </div>
+            <div>
+                <div>{{this.pos}}</div>
+                {{#if this.dreamTeam}}
+                <i class="fas fa-trash-alt"></i>
+                {{else}}
+                <i class="far fa-star"></i>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+      </script>
+
+    <script id="stats-template" type="text/x-handlebars-template">
+        {{#each stats}}
+            <div>{{this.[0]}}: {{this.[1]}}</div>
+        {{/each}}
+      </script>
+
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
