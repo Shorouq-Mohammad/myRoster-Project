@@ -1,0 +1,42 @@
+body{
+    background-color:lightgray;
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+}
+#container{
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+
+}
+#header{
+    display: grid;
+    height:50px;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-gap: 10px;
+}
+#players{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    height: 382px;
+}
+.player{
+    display: grid;
+    background-color: orange;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+img{
+    background-color:lightgray;
+}
+.stats{
+    font-size: 20px;
+}
+button{
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow:inset 0px 0px 18px 9px #9dadab;
+}
